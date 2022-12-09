@@ -1,0 +1,5 @@
+docker/nginx/log/
+back/vendor/
+back/tmp/
+.idea/
+.env

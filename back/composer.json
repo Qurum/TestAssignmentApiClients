@@ -1,0 +1,18 @@
+{
+  "require": {
+    "hassankhan/config": "^3.0",
+    "symfony/yaml": "^5.4",
+    "guzzlehttp/guzzle": "^7.5",
+    "respect/validation": "^2.2",
+    "php-di/php-di": "^6.4",
+    "ext-simplexml": "*",
+    "slim/slim": "^4.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpenWeatherMapApiClient\\": "OpenWeatherMapApiClient/",
+      "CbrApiClient\\": "CbrApiClient/",
+      "Services\\": "Services"
+    }
+  }
+}

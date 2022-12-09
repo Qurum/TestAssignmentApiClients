@@ -1,0 +1,13 @@
+get_weather:
+  method: GET
+  url: https://api.openweathermap.org/data/2.5/weather
+  query:
+    lat: 55.751244
+    lon: 37.618423
+    units: metric
+
+get_moscow_coordinates:
+  method: GET
+  url: http://api.openweathermap.org/geo/1.0/direct
+  query:
+    q: Moscow,,RU

@@ -1,0 +1,30 @@
+version: "2.4"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: 'labyrinth_nginx'
+    hostname: 'labyrinth_nginx'
+    ports:
+      - "9005:80"
+    volumes:
+      - ./back:/app
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx/log:/var/log/nginx
+    networks:
+      - labyrinth_net
+
+  php_fpm:
+    build: docker/php_fpm
+    container_name: 'labyrinth_php_fpm'
+    hostname: 'labyrinth_php_fpm'
+    volumes:
+      - ./back:/app
+    networks:
+      - labyrinth_net
+    env_file:
+      .env
+
+networks:
+  labyrinth_net:
+    driver: bridge
